@@ -34,7 +34,7 @@ function Payment() {
 	const [price, setPrice] = useState({ value: location.state.Price});
 
 	const initPayment = (data) => {
-		let useremail = JSON.parse(localStorage.getItem("token")).Email; 
+		let useremail = JSON.parse(sessionStorage.getItem("token")).Email; 
 		let ActualPrice = data.amount;
 		const options = {
 			key: "rzp_test_Tl8nN70qvSSoQ3",

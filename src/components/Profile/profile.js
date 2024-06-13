@@ -30,7 +30,7 @@ export default function Profile(){
     const response = await fetch(url, {method: 'GET', headers: {'Content-Type': 'application/json'}});
     if (response.ok) {
         const data = await response.json();
-       let Email =JSON.parse(localStorage.getItem("token")).Email;
+       let Email =JSON.parse(sessionStorage.getItem("token")).Email;
         const newData=data.filter(profile => profile.Email ===Email);  
         setProfile(newData[0])
      }

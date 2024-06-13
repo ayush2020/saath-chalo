@@ -104,7 +104,7 @@ export default function Login() {
             const data = await res.json();
             console.log(data);
             if(data.success){
-              localStorage.setItem("token", JSON.stringify(data.result));
+              sessionStorage.setItem("token", JSON.stringify(data.result));
               // navigate("/rideRequest");
               toggleOpen();
               const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
@@ -136,7 +136,7 @@ export default function Login() {
             const data = await res.json();
             console.log(data);
             if(data.success){
-              localStorage.setItem("token", JSON.stringify(data.result));
+              sessionStorage.setItem("token", JSON.stringify(data.result));
               // navigate("/rideFeed");
               toggleOpen();
               const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
@@ -216,7 +216,7 @@ export default function Login() {
       if (response != null) {
         if (response.data) {
           if (response.data.success) {
-            localStorage.setItem("token", JSON.stringify(response.data.result));
+            sessionStorage.setItem("token", JSON.stringify(response.data.result));
             console.log("true");
             navigate("/rideRequest");
           } else if (response.data.success === false) {
@@ -256,7 +256,7 @@ const EmailAndPassword = async () => {
     if (response.data) {
       if (response.data.success) {
         console.log("yes");
-        localStorage.setItem("token", JSON.stringify(response.data.result));
+        sessionStorage.setItem("token", JSON.stringify(response.data.result));
         navigate("/rideFeed");
       } else if (response.data.success === false) {
         console.log(response.data.message);
@@ -379,7 +379,7 @@ const EmailAndPassword = async () => {
                 <MDBModalTitle>
                   {loading ? (
                     <>
-                      `<h1>Signup SUCCESSFULY</h1>`
+                      `<h1>Signup SUCCESSFULLY</h1>`
                     </>
                   ) : null}
                 </MDBModalTitle>

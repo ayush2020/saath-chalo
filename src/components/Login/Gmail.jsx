@@ -39,7 +39,7 @@ function Gmail() {
           let url = `${Server}/rider/gmailLogin`;
           const res = await axios.post(url, { Email: user.email });
           if (res.data.success) {
-            localStorage.setItem("token", JSON.stringify(res.data.result));
+            sessionStorage.setItem("token", JSON.stringify(res.data.result));
             console.log("true");
             navigate("/rideRequest");
           } else if (res.data.success === false) {
@@ -50,7 +50,7 @@ function Gmail() {
           let url = `${Server}/user/gmailLogin`;
           const res = await axios.post(url, { Email: user.email });
           if (res.data.success) {
-            localStorage.setItem("token", JSON.stringify(res.data.result));
+            sessionStorage.setItem("token", JSON.stringify(res.data.result));
             console.log("true");
             navigate("/rideFeed");
           } else if (res.data.success === false) {

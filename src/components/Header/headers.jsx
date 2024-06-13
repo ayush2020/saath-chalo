@@ -17,14 +17,14 @@ export default function Headers(){
   const [ureUser,setUser] = useState(false);
   
   function logout(){
-    localStorage.clear();
+    sessionStorage.clear();
     navigate('/')
     window.location.reload();
   }
   const CheckData =()=>{
-    if(localStorage.getItem("token")!=null){
+    if(sessionStorage.getItem("token")!=null){
       setisLogin(true);
-      jsonObject = JSON.parse(localStorage.getItem("token"))
+      jsonObject = JSON.parse(sessionStorage.getItem("token"))
       // console.log(jsonObject); 
       if(jsonObject.IsRider){
         setRider(true);
@@ -32,7 +32,7 @@ export default function Headers(){
         setUser(true);
       }
       
-      // if(localStorage.getItem("token").){
+      // if(sessionStorage.getItem("token").){
       // }
   }
 }

@@ -18,7 +18,7 @@ function RideRequest() {
         if (response.ok) {
             const data = await response.json();
             console.log(data);
-            let Email =JSON.parse(localStorage.getItem("token")).Email;
+            let Email =JSON.parse(sessionStorage.getItem("token")).Email;
             // console.log(Email);
             // setPassenger(data);
         

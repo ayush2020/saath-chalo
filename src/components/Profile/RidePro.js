@@ -22,14 +22,14 @@ export default function RiderProfile(){
     const response = await fetch( riderUrl, {method: 'GET', headers: {'Content-Type': 'application/json'}});
     if (response.ok) {
         let riderData = await response.json();
-       let Email =JSON.parse(localStorage.getItem("token")).Email;
+       let Email =JSON.parse(sessionStorage.getItem("token")).Email;
         const newriderData=riderData.filter(profile => profile.Email ===Email);  
         setProfile(newriderData[0])
      }
     const response2 = await fetch( tripUrl, {method: 'GET', headers: {'Content-Type': 'application/json'}});
     if (response2.ok) {
         const data = await response2.json();
-       let Email =JSON.parse(localStorage.getItem("token")).Email;
+       let Email =JSON.parse(sessionStorage.getItem("token")).Email;
         const newData=data.filter(profile => profile.Email ===Email);  
         setTripDetail(newData[0])
      }

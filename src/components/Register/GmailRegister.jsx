@@ -81,7 +81,7 @@ import { useNavigate } from "react-router-dom";
                 console.log(response);
                 if(response.data.success === true){
                   toast.success(response.data.message);
-                  localStorage.setItem("token", JSON.stringify(response.data.result));
+                  sessionStorage.setItem("token", JSON.stringify(response.data.result));
                   // toast.success(response.data.message);
                   navigate("/rideRequest")
       
@@ -144,7 +144,7 @@ import { useNavigate } from "react-router-dom";
                 toast.success(data.message);
                 console.log(data.result);
                 PassengerChange({Email:Email,Name:Name});
-                localStorage.setItem("token", JSON.stringify(data.result));
+                sessionStorage.setItem("token", JSON.stringify(data.result));
                 // setBasicModal(true);
                
               } else if (data.success === false){

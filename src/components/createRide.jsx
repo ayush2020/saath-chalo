@@ -25,8 +25,8 @@ function CreateRide() {
      const [TypeofTrip,settypeofTrip]=useState("1way");
       const navigate = useNavigate();
     const handleChange= async()=>{
-        var Name=JSON.parse(localStorage.getItem("token")).FullName;
-        let Email=JSON.parse(localStorage.getItem("token")).Email;
+        var Name=JSON.parse(sessionStorage.getItem("token")).FullName;
+        let Email=JSON.parse(sessionStorage.getItem("token")).Email;
         console.log(Email);
         console.log(Value.PhoneNumber);
         
@@ -65,9 +65,9 @@ function CreateRide() {
    
     
     const CheckData =()=>{
-        if(localStorage.getItem("token")!=null){
-        jsonObject = JSON.parse(localStorage.getItem("token"));
-        if(!JSON.parse(localStorage.getItem("token")).IsRider){
+        if(sessionStorage.getItem("token")!=null){
+        jsonObject = JSON.parse(sessionStorage.getItem("token"));
+        if(!JSON.parse(sessionStorage.getItem("token")).IsRider){
             
             // notRider();
             var delayInMilliseconds = 3*1000; // 1 second

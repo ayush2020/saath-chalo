@@ -227,9 +227,9 @@ export default function RideFeed(){
    }
 //  Checking the Rider Is a Valid or not
 // const CheckData =()=>{
-//     if(localStorage.getItem("token")!=null){
-//       JSON.parse(localStorage.getItem("token"))
-//     //   setRiderInfo(localStorage.getItem("token"))
+//     if(sessionStorage.getItem("token")!=null){
+//       JSON.parse(sessionStorage.getItem("token"))
+//     //   setRiderInfo(sessionStorage.getItem("token"))
         
 //     }else{
 //         toast.error("Not Found");

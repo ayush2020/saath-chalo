@@ -11,7 +11,7 @@ export const ContextProvider = ({ children }) => {
     const [state, setState] = useState("ayush");
 
     useEffect(() => {
-        const currentUser = JSON.parse(localStorage.getItem('token'));
+        const currentUser = JSON.parse(sessionStorage.getItem('token'));
         setState(prevState => ({
             ...prevState,
             currentUser: currentUser
@@ -92,7 +92,7 @@ export const ContextProvider = ({ children }) => {
 // // const Context = createContext(initialState);
 // const ContextProvider = ({ children }) => {
 //     useEffect(() => {
-//         const currentUser = JSON.parse(localStorage.getItem('token'));
+//         const currentUser = JSON.parse(sessionStorage.getItem('token'));
 //         console.log(currentUser);
         
 //     }, []);
@@ -166,7 +166,7 @@ export const ContextProvider = ({ children }) => {
 // const ContextProvider = ({ children }) => {
 
 //     useEffect(() => {
-//         const currentUser = JSON.parse(localStorage.getItem('token'));
+//         const currentUser = JSON.parse(sessionStorage.getItem('token'));
 //     }, []);
 
 //     return (

@@ -27,7 +27,7 @@ console.log(location.state.list[0]);
 
   const bookCab = async() => {
    let RiderEmail = location.state.list[0].Email;
-   let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
+   let UserEmail = JSON.parse(sessionStorage.getItem("token")).Email;
    console.log("UserEmail " +UserEmail+" Cab Booked Successfully")
    const url = `${Server}/passenger/update/${UserEmail}`;
    // This Line will update Rider Email Id in Passenger Schema 
@@ -47,7 +47,7 @@ console.log(location.state.list[0]);
   } 
 }
 const getPassenger = async () => {
-  let UserEmail = JSON.parse(localStorage.getItem("token")).Email;
+  let UserEmail = JSON.parse(sessionStorage.getItem("token")).Email;
   let RiderEmail = location.state.list[0].Email;
   
   const url1 = `${Server}/passenger/approval/${UserEmail}`;
